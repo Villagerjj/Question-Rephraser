@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>John's Question Rephraser V1</title>
+<p> welcome to my question rephraser!</p>
+<p> paste in the question and write your answer as bare bones as possible</p>
+<p> my script will auto format the answer and question to make your answer more professional.</p>
+</head>
+<body>
+<input id='input' type="text" autocapitalize="on" placeholder="Question">
+<input id='finsent' type="text" placeholder="your answer">
+<button onclick="replace()">Complete question</button>
+<button onclick="replaceb()">Complete question (but box order is reversed)</button>
+<p id="has"></p>
+<p contenteditable="true" spellcheck="true" id='output'></p>
+      
+    <script>
+  	 function replace() {
+ 	   var a = document.getElementById('input').value;
+       var index1 = a.indexOf("Why");    
+       var index2 = a.indexOf("What");
+ 	   var b = a.replace("Why do you", "I ").replace("did the", "the").replace("Would you", "I would").replace("What questions", "Some questions that").replace(" What did you", "Something I").replace("What do you feel you", "I think me").replace("did you have", "I had").replace("What are", "").replace("What are this", "these ").replace("Explain what happened", " ").replace(/your/g, " my ").replace(".", ", ").replace("", "").replace("Explain", "").replace(/you/g, " I ").replace("", "").replace("", "").replace("What questions", "Some questions").replace("do they", "they").replace("have", "had").replace("What does", "").replace("What ", "Some ").replace("learn", "learned").replace("anything", "something").replace("bring", "brought").replace("How could you have", "I could of had").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "")
+ 	   if(index1 !== -1){
+        var c = b.replace("?", " because ");
+    } else{
+        var c = b.replace("?", ": ");
+    }
+    if(index2 !== -1){
+        var c = b.replace("?", " are ");
+    } else{
+        var c = b.replace("?", ": ");
+    }
+       var d = c + document.getElementById('finsent').value;
+ 	   document.getElementById('output').innerHTML=d;
+ 	}
+    function replaceAll(str,mapObj){
+    var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+
+    return str.replace(re, function(matched){
+        return mapObj[matched.toLowerCase()];
+    });
+}
+function replaceb() {
+ 	   var a = document.getElementById('input').value;
+       var index1 = a.indexOf("Why");    
+       var index2 = a.indexOf("What");
+ 	   var b = a.replace("Did you", "I did").replace("What", " ").replace("?", ".").replace("What are this", "these ").replace("How will you", "").replace("How will you", "I will ").replace(/your/g, " my ").replace(/you/g, " I ").replace("and how you", "I").replace("Explain why you", " I ").replace("Was it", "it was").replace("Explain ", " is ").replace("what did you learn", "is learned").replace("modify", "by modifying").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "").replace("", "")
+        if(index1 !== -1){
+        var c = b.replace("?", " because ");
+    } else{
+        var c = b.replace("?", ": ");
+    }
+    if(index2 !== -1){
+        var c = b.replace("?", " are ");
+    } else{
+        var c = b.replace("?", ": ");
+    }
+       var d = document.getElementById('finsent').value + c;
+ 	   document.getElementById('output').innerHTML=d;
+ 	}
+    function replaceAll(str,mapObj){
+    var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+
+    return str.replace(re, function(matched){
+        return mapObj[matched.toLowerCase()];
+    });
+}
+    </script>
+</body>
+  
+</html>
+
+
+
